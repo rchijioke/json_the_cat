@@ -15,4 +15,20 @@ describe('fetchBreedDescription', () => {
       done();
     });
   });
+  
+
+  it('In this scenario, we expect the first argument for our callback (err) to be set, and desc to be null', (done) => {
+    fetchBreedDescription('Jsxcw', (err, desc) => {
+      // we expect no error for this scenario
+      // assert.equal(expecteerr, null);
+
+      assert.equal(desc, null);
+      const expectedErr = "Breed not found";
+
+      // compare returned description
+      assert.equal(expectedErr, err);
+
+      done();
+})
+  })
 });
